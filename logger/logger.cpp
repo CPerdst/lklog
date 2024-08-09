@@ -3,6 +3,7 @@
 //
 
 #include "logger.h"
+#include "packer.h"
 
 namespace logger {
     void logger::setLogFormater(std::string formaterStr) {
@@ -17,9 +18,11 @@ namespace logger {
     }
 
     void logger::logToFile(std::string path) {
-        auto tmp = std::make_shared<fileAppender>();
-        tmp->open(std::move(path));
-        mFileAppenders.push_back(std::move(tmp));
+        if(mFileAppenders.size() < packer::MaxFileAppenderCount){
+            auto tmp = std::make_shared<fileAppender>();
+            tmp->open(std::move(path));
+            mFileAppenders.push_back(std::move(tmp));
+        }
     }
 
     void logger::logOut(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
