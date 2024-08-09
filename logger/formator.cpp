@@ -7,20 +7,25 @@
 
 namespace logger {
     std::string formator::operation(std::string &event) {
-        return str;
+        return strs;
     }
 
-    void formator::format() {
+    std::string formator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
         std::string s = std::string("dsa");
         std::string r = vec.back()->operation(s);
         std::cout << r << std::endl;
+        return std::move(r);
     }
 
     void formator::setStr(std::string s) {
-        str = std::move(s);
+        std::string tmp = std::move(s);
+        std::cout << tmp << std::endl;
+//        strs.append("asd");
+        std::cout << strs << std::endl;
+        strs = std::move(tmp);
     }
 
     std::string formator::getStr() {
-        return str;
+        return strs;
     }
 } // logger

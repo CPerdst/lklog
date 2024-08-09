@@ -24,7 +24,8 @@ namespace logger {
     protected:
         std::string str;
     private:
-        std::unique_ptr<baseDecorator> ptr;
+//        std::weak_ptr<baseDecorator> ptr;
+        baseDecorator* ptr{};
     };
 
 } // logger

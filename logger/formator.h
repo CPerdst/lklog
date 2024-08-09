@@ -8,6 +8,9 @@
 #include "vector"
 #include "baseDecorator.h"
 #include "dateDecorator.h"
+#include "map"
+#include "variant"
+#include "thread"
 
 namespace logger {
 
@@ -23,12 +26,12 @@ namespace logger {
             vec.push_back(std::move(tmp1));
         };
         ~formator() override = default;
-        std::string operation(std::string& event) override;
-        void format();
+        std::string operation(std::string& events) override;
+        std::string format(std::map<std::string, std::variant<int, std::string, std::thread::id>>&);
         void setStr(std::string);
         std::string getStr();
     private:
-        std::string str;
+        std::string strs;
         std::vector<std::unique_ptr<baseDecorator>> vec;
     };
 

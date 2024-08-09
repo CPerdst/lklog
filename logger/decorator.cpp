@@ -13,6 +13,6 @@ namespace logger {
     }
 
     void decorator::setPtr(baseDecorator *p) {
-        if(p) ptr.reset(p);
+        if(p) ptr = p;
     }
 } // logger
