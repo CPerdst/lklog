@@ -33,4 +33,12 @@ namespace logger {
         for(auto ite = mFileAppenders.begin(); ite != mFileAppenders.end(); ite++)
             (*(*ite)).logOut(s);
     }
+
+    void logger::setLevel(packer::level level) {
+        mLevel = level;
+    }
+
+    packer::level logger::getLevel() {
+        return mLevel;
+    }
 } // logger

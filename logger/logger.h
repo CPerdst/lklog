@@ -13,6 +13,7 @@
 #include "fileAppender.h"
 #include "consoleAppender.h"
 #include "formator.h"
+#include "packer.h"
 
 namespace logger {
 
@@ -24,10 +25,13 @@ namespace logger {
         void logToFile(std::string path);
         void logToConsole();
         void setLogFormater(std::string formaterStr);
+        void setLevel(packer::level);
+        packer::level getLevel();
     private:
         std::vector<std::shared_ptr<fileAppender>> mFileAppenders;
         std::shared_ptr<consoleAppender> mConsoleAppender;
         std::shared_ptr<formator> mFormater;
+        packer::level mLevel;
     };
 
 } // logger

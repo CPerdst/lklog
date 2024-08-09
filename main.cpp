@@ -4,6 +4,7 @@
 #include "logger/formator.h"
 #include "logger/fileAppender.h"
 #include "logger/logger.h"
+#include "logger/eventCapturer.h"
 
 int main() {
     // 测试fileAppender是否可以移动
@@ -33,6 +34,15 @@ int main() {
         // 创建 event 对象
         std::map<std::string, std::variant<int, std::string, std::thread::id>> events;
         log.logOut(events);
+    }
+    // 测试eventCapturer是否正常
+    if(packer::DebugEventCapturer)
+    {
+        logger::logger log{};
+        log.logToConsole();
+        log.setLogFormater(std::string("%s {%Y}\n"));
+        log.setLevel(packer::Debug);
+        logger::eventCapturer(__FILE__, __LINE__, std::this_thread::get_id(), packer::Debug, &log).Oss() << "nihao";
     }
 
     return 0;
