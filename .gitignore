@@ -1,0 +1,6 @@
+cmake-build-debug/
+CMakeLists.txt
+misc.xml
+modules.xml
+vcs.xml
+logger.iml
