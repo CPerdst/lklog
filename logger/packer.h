@@ -7,7 +7,10 @@
 
 
 class packer {
-    static const int MaxFileAppenderCount = 10;
+public:
+    static const int MaxFileAppenderCount       = 10;
+    static const bool DebugFileAppender         = false;
+    static const bool DebugLogger               = false;
 };
 
 
