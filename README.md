@@ -14,6 +14,38 @@
 
 你可以将 `lklog` 项目直接包含到你的 C++ 项目中。
 
+## 使用
+
+- **(%tid|%threadid)({(\d+)})?**: 线程id正则匹配式
+- **(%line|%linenum)**: 行号正则匹配式
+- **(%path|%filepath)**: 文件路径正则匹配式
+- **%s[' ']*\{(.*)\}**: 时间正则匹配式
+- **(%level)**: 正则匹配式
+
+事例: [%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line
+
+线程id: [%threadid{4}]
+
+输出: [8eb7]
+
+日志等级: [%level]
+
+输出: [Debug]
+
+时间: %s [%Y-%m-%d %H:%M:%S]
+
+输出: [2024-08-11 04:26:20]
+
+文件路径: %filepath
+
+输出: C:/path/to/project/main.cpp
+
+行号: %line
+
+输出: 46
+
+整体输出: [8eb7] [Debug] [2024-08-11 04:26:20] C:/path/to/project/main.cpp:46
+
 ### 克隆仓库
 
 ```bash
