@@ -39,11 +39,15 @@ int main() {
     // 测试eventCapturer是否正常
     if(packer::DebugEventCapturer)
     {
-        logger::logger log{};
-        log.logToConsole();
-        log.setLogFormater(std::string("[%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line \n"));
-        log.setLevel(packer::Debug);
-        logger::eventCapturer(__FILE__, __LINE__, std::this_thread::get_id(), packer::Debug, &log).Oss() << "nihao";
+//        while(true){
+            logger::logger log{};
+            log.logToConsole();
+            log.logToFile("./tmp.log");
+            log.setLogFormater(std::string("[%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line : %message \n"));
+            log.setLevel(packer::Debug);
+            logger::eventCapturer(__FILE__, __LINE__, std::this_thread::get_id(), packer::Debug, &log).Oss() << "nihao";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+//        }
     }
     return 0;
 }
