@@ -7,7 +7,7 @@
 
 namespace logger {
     void lineDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
-        std::regex r("(%line|%linenum )");
+        std::regex r("(%line|%linenum)");
         std::smatch match;
         if(std::regex_search(str, match, r)){
             auto it = events.find("line");
