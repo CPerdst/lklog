@@ -1,3 +1,4 @@
+#include <iomanip>
 #include "iostream"
 #include "vector"
 #include "logger/packer.h"
@@ -40,10 +41,9 @@ int main() {
     {
         logger::logger log{};
         log.logToConsole();
-        log.setLogFormater(std::string("[%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line \n"));
+        log.setLogFormater(std::string("[%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line \n"));
         log.setLevel(packer::Debug);
         logger::eventCapturer(__FILE__, __LINE__, std::this_thread::get_id(), packer::Debug, &log).Oss() << "nihao";
     }
-
     return 0;
 }

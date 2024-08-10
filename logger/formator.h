@@ -10,6 +10,7 @@
 #include "dateDecorator.h"
 #include "lineDecorator.h"
 #include "levelDecorator.h"
+#include "tidDecorator.h"
 #include "filepathDecorator.h"
 #include "map"
 #include "variant"
@@ -29,10 +30,13 @@ namespace logger {
             tmp2->setPtr(tmp1.get());
             auto tmp3 = std::make_unique<levelDecorator>();
             tmp3->setPtr(tmp2.get());
+            auto tmp4 = std::make_unique<tidDecorator>();
+            tmp4->setPtr(tmp3.get());
             vec.push_back(std::move(tmp));
             vec.push_back(std::move(tmp1));
             vec.push_back(std::move(tmp2));
             vec.push_back(std::move(tmp3));
+            vec.push_back(std::move(tmp4));
         };
         ~formator() override = default;
         std::string operation(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
