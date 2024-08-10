@@ -7,6 +7,6 @@
 
 namespace logger {
     void consoleAppender::logOut(std::string log) {
-        if(!log.empty()) std::cout << log << std::endl;
+        if(!log.empty()) std::cout << log << std::flush;
     }
 } // logger

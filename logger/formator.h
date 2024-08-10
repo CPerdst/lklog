@@ -20,13 +20,13 @@ namespace logger {
             // 添加装饰器
             auto tmp = std::make_unique<dateDecorator>();
             tmp->setPtr(this);
-            auto tmp1 = std::make_unique<dateDecorator>();
-            tmp1->setPtr(tmp.get());
+//            auto tmp1 = std::make_unique<dateDecorator>();
+//            tmp1->setPtr(tmp.get());
             vec.push_back(std::move(tmp));
-            vec.push_back(std::move(tmp1));
+//            vec.push_back(std::move(tmp1));
         };
         ~formator() override = default;
-        std::string operation(std::string& events) override;
+        std::string operation(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
         std::string format(std::map<std::string, std::variant<int, std::string, std::thread::id>>&);
         void setStr(std::string);
         std::string getStr();

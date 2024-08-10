@@ -6,9 +6,9 @@
 
 namespace logger {
 
-    std::string decorator::operation(std::string& event) {
-        str = std::move(ptr->operation(event));
-        format();
+    std::string decorator::operation(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
+        str = std::move(ptr->operation(events));
+        format(events);
         return std::move(str);
     }
 

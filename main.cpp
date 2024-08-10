@@ -40,7 +40,7 @@ int main() {
     {
         logger::logger log{};
         log.logToConsole();
-        log.setLogFormater(std::string("%s {%Y}\n"));
+        log.setLogFormater(std::string("[%s {%Y-%m-%d %H:%M:%S}]\n"));
         log.setLevel(packer::Debug);
         logger::eventCapturer(__FILE__, __LINE__, std::this_thread::get_id(), packer::Debug, &log).Oss() << "nihao";
     }

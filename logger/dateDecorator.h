@@ -14,7 +14,7 @@ namespace logger {
         dateDecorator():decorator(){};
         ~dateDecorator() override = default;
 
-        void format() override;
+        void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
     };
 
 } // logger

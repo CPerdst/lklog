@@ -18,8 +18,8 @@ namespace logger {
         decorator& operator=(const decorator&) = delete;
         decorator(decorator&&) noexcept = default;
         decorator& operator=(decorator&&) = default;
-        std::string operation(std::string& event) override;
-        virtual void format() = 0;
+        std::string operation(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
+        virtual void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) = 0;
         void setPtr(baseDecorator*);
     protected:
         std::string str;

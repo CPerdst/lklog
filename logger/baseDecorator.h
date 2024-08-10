@@ -6,6 +6,9 @@
 #define LOGGER_BASEDECORATOR_H
 
 #include "string"
+#include "variant"
+#include "thread"
+#include "map"
 
 namespace logger {
 
@@ -13,7 +16,7 @@ namespace logger {
     public:
         baseDecorator() = default;
         virtual ~baseDecorator() = default;
-        virtual std::string operation(std::string& event) = 0;
+        virtual std::string operation(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) = 0;
     };
 
 } // logger

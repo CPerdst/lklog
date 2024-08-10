@@ -6,22 +6,20 @@
 #include "iostream"
 
 namespace logger {
-    std::string formator::operation(std::string &event) {
+    std::string formator::operation(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
         return strs;
     }
 
     std::string formator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
-        std::string s = std::string("dsa");
-        std::string r = vec.back()->operation(s);
-        std::cout << r << std::endl;
+        std::string r = vec.back()->operation(events);
         return std::move(r);
     }
 
     void formator::setStr(std::string s) {
         std::string tmp = std::move(s);
-        std::cout << tmp << std::endl;
+//        std::cout << tmp << std::endl;
 //        strs.append("asd");
-        std::cout << strs << std::endl;
+//        std::cout << strs << std::endl;
         strs = std::move(tmp);
     }
 
