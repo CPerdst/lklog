@@ -4,8 +4,10 @@
 
 #include "logger.h"
 #include "packer.h"
+#include "iostream"
 
 namespace logger {
+
     void logger::setLogFormater(std::string formaterStr) {
         if(!mFormater.get())
             mFormater = std::make_shared<formator>();
@@ -30,8 +32,9 @@ namespace logger {
         // 通过 console 输出
         if(mConsoleAppender.get()) mConsoleAppender->logOut(s);
         // 通过 file 输出
-        for(auto ite = mFileAppenders.begin(); ite != mFileAppenders.end(); ite++)
+        for(auto ite = mFileAppenders.begin(); ite != mFileAppenders.end(); ite++){
             (*(*ite)).logOut(s);
+        }
     }
 
     void logger::setLevel(packer::level level) {
@@ -41,4 +44,17 @@ namespace logger {
     packer::level logger::getLevel() {
         return mLevel;
     }
+
+    logger *logger::Root() {
+        if(!root){
+            auto tmp = new logger();
+            tmp->logToConsole();
+            tmp->setLogFormater(std::string(packer::RootFormatStr));
+            root = tmp;
+        }
+        return root;
+    }
+
+    logger* logger::root = nullptr;
+
 } // logger

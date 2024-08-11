@@ -27,6 +27,8 @@ namespace logger {
         void setLogFormater(std::string formaterStr);
         void setLevel(packer::level);
         packer::level getLevel();
+        static logger* Root();
+        static logger* root;
     private:
         std::vector<std::shared_ptr<fileAppender>> mFileAppenders;
         std::shared_ptr<consoleAppender> mConsoleAppender;

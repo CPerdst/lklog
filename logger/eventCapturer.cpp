@@ -5,6 +5,7 @@
 #include "eventCapturer.h"
 
 namespace logger {
+
     const time_t eventCapturer::BeginTimer = time(nullptr);
 
     std::ostringstream &eventCapturer::Oss() {

@@ -22,6 +22,7 @@ public:
         Error,
         Fatal
     };
+    static const char* RootFormatStr;
 };
 
 
