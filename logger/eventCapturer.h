@@ -12,6 +12,16 @@
 #include "logger.h"
 #include "sstream"
 
+#define LogWarp(LEVEL, LOGGER)  logger::eventCapturer(__FILE__, __LINE__, std::this_thread::get_id(), LEVEL, LOGGER).Oss()
+#define lkRoot(LEVEL)           LogWarp(LEVEL, logger::logger::Root())
+#define RootTrace()             lkRoot(packer::level::Trace)
+#define RootDebug()             lkRoot(packer::level::Debug)
+#define RootInfo()              lkRoot(packer::level::Info)
+#define RootNotice()            lkRoot(packer::level::Notice)
+#define RootWarn()              lkRoot(packer::level::Warn)
+#define RootError()             lkRoot(packer::level::Error)
+#define RootFatal()             lkRoot(packer::level::Fatal)
+
 namespace logger {
 
     class eventCapturer {
