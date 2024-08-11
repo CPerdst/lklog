@@ -5,3 +5,5 @@ modules.xml
 vcs.xml
 logger.iml
 workspace.xml
+test/
+main.cpp
