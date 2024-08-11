@@ -23,6 +23,7 @@ public:
         Fatal
     };
     static const char* RootFormatStr;
+    static const packer::level RootLevel;
 };
 
 

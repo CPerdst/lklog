@@ -50,6 +50,7 @@ namespace logger {
             auto tmp = new logger();
             tmp->logToConsole();
             tmp->setLogFormater(std::string(packer::RootFormatStr));
+            tmp->setLevel(packer::RootLevel);
             root = tmp;
         }
         return root;
