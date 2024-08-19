@@ -14,6 +14,7 @@ namespace logger {
 
     eventCapturer::~eventCapturer() {
         if(mLevel >= mPtr->getLevel()){
+            std::lock_guard<std::mutex> lock(*logger::mtx);
             auto tmp = getEvents();
             mPtr->logOut(tmp);
         }

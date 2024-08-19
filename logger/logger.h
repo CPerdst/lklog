@@ -8,6 +8,7 @@
 #include "map"
 #include "string"
 #include "vector"
+#include "mutex"
 #include "variant"
 #include "thread"
 #include "fileAppender.h"
@@ -29,6 +30,7 @@ namespace logger {
         packer::level getLevel();
         static logger* Root();
         static logger* root;
+        static std::mutex* mtx;
     private:
         std::vector<std::shared_ptr<fileAppender>> mFileAppenders;
         std::shared_ptr<consoleAppender> mConsoleAppender;

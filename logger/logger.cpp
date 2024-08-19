@@ -52,10 +52,13 @@ namespace logger {
             tmp->setLogFormater(std::string(packer::RootFormatStr));
             tmp->setLevel(packer::RootLevel);
             root = tmp;
+            tmp = nullptr;
+            mtx = new std::mutex{};
         }
         return root;
     }
 
     logger* logger::root = nullptr;
+    std::mutex* logger::mtx = nullptr;
 
 } // logger
