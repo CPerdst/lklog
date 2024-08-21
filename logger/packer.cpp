@@ -4,5 +4,5 @@
 
 #include "packer.h"
 
-const char* packer::RootFormatStr               = "[%threadid{6}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line: %message \n";
+const char* packer::RootFormatStr               = "[%s {%Y-%m-%d %H:%M:%S}] [%level] %filepath:%line (%func): %message \n";
 const packer::level packer::RootLevel           = packer::level::Debug;

@@ -23,6 +23,7 @@ namespace logger {
     std::map<std::string, std::variant<int, std::string, std::thread::id>> eventCapturer::getEvents() {
         std::map<std::string, std::variant<int, std::string, std::thread::id>> events{};
         events["path"]      = std::move(mPath);
+        events["func"]      = std::move(mFunc);
         events["line"]      = mLine;
         events["tid"]       = mTid;
         events["time"]      = (int)mNow;
