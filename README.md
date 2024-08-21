@@ -16,11 +16,45 @@
 
 ## 使用
 
-- **(%tid|%threadid)({(\d+)})?**: 线程id正则匹配式
-- **(%line|%linenum)**: 行号正则匹配式
-- **(%path|%filepath)**: 文件路径正则匹配式
-- **%s[' ']*\{(.*)\}**: 时间正则匹配式
-- **(%level)**: 正则匹配式
+### 日志器宏基本使用
+
+lklog 共有七中日志等级（Trace、Debug、Info、Notice、Warn、Error、Fatal），使用方法也很简单
+
+只需要使用对应的宏即可
+
+```cpp
+#include "eventCapturer.h"
+
+int main(){
+    // 七种模式的简单使用
+    Trace() << "Trace";
+    Debug() << "Debug";
+    Info() << "Info";
+    Notice() << "Notice";
+    Warn() << "Warn";
+    Error() << "Error";
+    Fatal() << "Fatal";
+}
+```
+
+默认日志器等级是Debug
+
+默认日志格式："[%s {%Y-%m-%d %H:%M:%S}] [%level] %filepath:%line (%func): %message\n"
+
+### 更改日志器的默认设置
+
+```cpp
+#include "eventCapturer.h"
+
+int main(){
+    // 设置日志登记
+    logger::logger::Root()->setLevel(packer::Info);
+    // 设置日志格式
+    logger::logger::Root()->setLogFormater("[%filepath:%line]: %message\n");
+    // 设置日志输出到对应的文件
+    logger::logger::Root()->logToFile("./test.txt");
+}
+```
 
 事例: [%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line
 
