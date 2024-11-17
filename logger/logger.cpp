@@ -6,7 +6,11 @@
 #include "packer.h"
 #include "iostream"
 
+
+
 namespace logger {
+
+    std::function<void(std::string&)> logger::g_console_appender_callback = nullptr;
 
     void logger::setLogFormater(std::string formaterStr) {
         if(!mFormater.get())
@@ -30,7 +34,12 @@ namespace logger {
     void logger::logOut(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
         std::string s = mFormater->format(events);
         // 通过 console 输出
-        if(mConsoleAppender.get()) mConsoleAppender->logOut(s);
+        if(mConsoleAppender.get()) {
+            if(!g_console_appender_callback)
+                mConsoleAppender->logOut(s);
+            else
+                mConsoleAppender->logOut(s, g_console_appender_callback);
+        }
         // 通过 file 输出
         for(auto ite = mFileAppenders.begin(); ite != mFileAppenders.end(); ite++){
             (*(*ite)).logOut(s);
@@ -39,6 +48,11 @@ namespace logger {
 
     void logger::setLevel(packer::level level) {
         mLevel = level;
+    }
+
+    void logger::setConsoleCallback(std::function<void (std::string &)> callback)
+    {
+        g_console_appender_callback = std::move(callback);
     }
 
     packer::level logger::getLevel() {

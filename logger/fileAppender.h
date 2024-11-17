@@ -19,6 +19,7 @@ namespace logger {
         fileAppender(fileAppender&&) noexcept = default;
         fileAppender& operator=(fileAppender&&) noexcept = default;
         void logOut(std::string log) override;
+        void logOut(std::string log, std::function<void(std::string&)> console_appender_callback) override;
         void open(std::string path);
     private:
         std::ofstream ofs;

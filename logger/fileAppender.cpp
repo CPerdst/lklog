@@ -17,4 +17,10 @@ namespace logger {
         if(ofs.is_open())
             ofs << log << std::flush;
     }
+
+    void fileAppender::logOut(std::string log, std::function<void (std::string &)> console_appender_callback)
+    {
+        if(ofs.is_open())
+            ofs << log << std::flush;
+    }
 } // logger

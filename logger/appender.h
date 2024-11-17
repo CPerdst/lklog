@@ -6,6 +6,7 @@
 #define LKLOG_APPENDER_H
 
 #include "string"
+#include "functional"
 
 namespace logger {
 
@@ -14,6 +15,7 @@ namespace logger {
         appender() = default;
         virtual ~appender() = default;
         virtual void logOut(std::string log) = 0;
+        virtual void logOut(std::string log, std::function<void(std::string&)> console_appender_callback) = 0;
     };
 
 } // logger

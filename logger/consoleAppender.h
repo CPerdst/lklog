@@ -13,6 +13,7 @@ namespace logger {
     public:
         consoleAppender() = default;
         void logOut(std::string log) override;
+        void logOut(std::string log, std::function<void(std::string&)> console_appender_callback) override;
     };
 
 } // logger
