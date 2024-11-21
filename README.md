@@ -54,6 +54,11 @@ int main(){
     logger::logger::Root()->setLogFormater("[%filepath:%line]: %message\n");
     // 设置日志输出到对应的文件
     logger::logger::Root()->logToFile("./test.txt");
+    // 设置日志器console输出回调
+    logger::logger::setConsoleCallback([](std::string &log)> {
+        // custom log usage
+        ...
+    });
 }
 ```
 
