@@ -74,9 +74,11 @@ int main(){
 
 **文件行号**：%line
 
-事例: [%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line
+**日志消息**：%message
 
-整体输出: [8eb7] [Debug] [2024-08-11 04:26:20] C:/path/to/project/main.cpp:46
+事例: "[%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line: %message\n"
+
+整体输出: [8eb7] [Debug] [2024-08-11 04:26:20] C:/path/to/project/main.cpp:46: hello world
 
 ### 克隆仓库
 
