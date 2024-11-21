@@ -28,13 +28,13 @@ lklog 共有七中日志等级（Trace、Debug、Info、Notice、Warn、Error、
 
 int main(){
     // 七种模式的简单使用
-    Trace() << "Trace";
-    Debug() << "Debug";
-    Info() << "Info";
-    Notice() << "Notice";
-    Warn() << "Warn";
-    Error() << "Error";
-    Fatal() << "Fatal";
+    RootTrace() << "Trace";
+    RootDebug() << "Debug";
+    RootInfo() << "Info";
+    RootNotice() << "Notice";
+    RootWarn() << "Warn";
+    RootError() << "Error";
+    RootFatal() << "Fatal";
 }
 ```
 
@@ -48,7 +48,7 @@ int main(){
 #include "eventCapturer.h"
 
 int main(){
-    // 设置日志登记
+    // 设置日志等级
     logger::logger::Root()->setLevel(packer::Info);
     // 设置日志格式
     logger::logger::Root()->setLogFormater("[%filepath:%line]: %message\n");
@@ -57,31 +57,23 @@ int main(){
 }
 ```
 
+### 格式化字符串：
+
+**日志等级**：%level
+
+**线程ID**：%threadid{prefix_num}
+
+**日志时间**：%s {时间格式}
+
+**文件路径**：%filepath
+
+**文件行号**：%line
+
 事例: [%threadid{4}] [%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line
-
-线程id: [%threadid{4}]
-
-输出: [8eb7]
-
-日志等级: [%level]
-
-输出: [Debug]
-
-时间: %s [%Y-%m-%d %H:%M:%S]
-
-输出: [2024-08-11 04:26:20]
-
-文件路径: %filepath
-
-输出: C:/path/to/project/main.cpp
-
-行号: %line
-
-输出: 46
 
 整体输出: [8eb7] [Debug] [2024-08-11 04:26:20] C:/path/to/project/main.cpp:46
 
 ### 克隆仓库
 
 ```bash
-git clone https://github.com/yourusername/lklog.git
+git clone https://github.com/CPerdst/lklog.git
