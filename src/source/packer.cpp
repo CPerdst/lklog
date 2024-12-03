@@ -12,5 +12,5 @@
  * 代码路径：%filepath
  * 时间： %s {%Y-%m-%d %H:%M:%S}
  */
-const char* packer::RootFormatStr               = "[%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line (%func): %message \n";
+const char* packer::RootFormatStr               = "[%level] [%s {%Y-%m-%d %H:%M:%S}] %filepath:%line (%func): %message";
 const packer::level packer::RootLevel           = packer::level::Info;
