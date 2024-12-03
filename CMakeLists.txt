@@ -10,8 +10,7 @@ project(lklog)
 
 file(GLOB LKLOG_SOURCE "src/source/*.cpp")
 
-add_library(lklog SHARED ${LKLOG_SOURCE}
-        test/basic_usage/main.cpp)
+add_library(lklog SHARED ${LKLOG_SOURCE})
 
 
 if (WIN32)
