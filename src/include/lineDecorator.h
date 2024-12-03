@@ -6,10 +6,11 @@
 #define LKLOG_LINEDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class lineDecorator :public decorator{
+    class DLL_API lineDecorator :public decorator{
     public:
         lineDecorator():decorator(){};
         ~lineDecorator() override = default;

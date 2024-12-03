@@ -1,5 +1,4 @@
 cmake-build-debug/
-CMakeLists.txt
 misc.xml
 modules.xml
 vcs.xml
@@ -7,3 +6,5 @@ logger.iml
 workspace.xml
 test/
 main.cpp
+build/
+.vs/

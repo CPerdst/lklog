@@ -6,10 +6,11 @@
 #define LKLOG_CONSOLEAPPENDER_H
 
 #include "appender.h"
+#include "tools.h"
 
 namespace logger {
 
-    class consoleAppender : public appender{
+    class DLL_API consoleAppender : public appender{
     public:
         consoleAppender() = default;
         void logOut(std::string log) override;

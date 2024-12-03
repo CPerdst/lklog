@@ -7,10 +7,11 @@
 
 #include "baseDecorator.h"
 #include "memory"
+#include "tools.h"
 
 namespace logger {
 
-    class decorator: public baseDecorator{
+    class DLL_API decorator: public baseDecorator{
     public:
         decorator():baseDecorator(){};
         ~decorator() override = default;

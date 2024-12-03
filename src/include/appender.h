@@ -7,10 +7,11 @@
 
 #include "string"
 #include "functional"
+#include "tools.h"
 
 namespace logger {
 
-    class appender {
+    class DLL_API appender {
     public:
         appender() = default;
         virtual ~appender() = default;

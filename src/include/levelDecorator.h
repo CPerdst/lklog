@@ -6,10 +6,11 @@
 #define LKLOG_LEVELDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class levelDecorator :public decorator{
+    class DLL_API levelDecorator :public decorator{
     public:
         levelDecorator():decorator(){};
         ~levelDecorator() override = default;

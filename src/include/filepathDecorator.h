@@ -6,10 +6,11 @@
 #define LKLOG_FILEPATHDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class filepathDecorator:public decorator {
+    class DLL_API filepathDecorator:public decorator {
     public:
         filepathDecorator():decorator(){};
         ~filepathDecorator() override = default;

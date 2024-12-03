@@ -7,10 +7,11 @@
 
 #include "appender.h"
 #include "fstream"
+#include "tools.h"
 
 namespace logger {
 
-    class fileAppender : public appender{
+    class DLL_API fileAppender : public appender{
     public:
         fileAppender() = default;
         ~fileAppender() override = default;

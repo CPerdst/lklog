@@ -6,6 +6,7 @@
 #include "regex"
 #include "iostream"
 #include "iomanip"
+#include "sstream"
 
 namespace logger {
     void tidDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {

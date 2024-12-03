@@ -6,10 +6,11 @@
 #define LOGGER_DATEDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class dateDecorator :public decorator{
+    class DLL_API dateDecorator :public decorator{
     public:
         dateDecorator():decorator(){};
         ~dateDecorator() override = default;

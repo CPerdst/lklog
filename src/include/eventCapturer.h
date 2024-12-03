@@ -11,6 +11,7 @@
 #include "chrono"
 #include "logger.h"
 #include "sstream"
+#include "tools.h"
 
 #define LogWarp(LEVEL, LOGGER)  logger::eventCapturer(__FILE__, __func__, __LINE__, std::this_thread::get_id(), LEVEL, LOGGER).Oss()
 #define lkRoot(LEVEL)           LogWarp(LEVEL, logger::logger::Root())
@@ -24,7 +25,7 @@
 
 namespace logger {
 
-    class eventCapturer {
+    class DLL_API eventCapturer {
     public:
         eventCapturer(std::string path, std::string func, int line, std::thread::id tid, packer::level level, logger* ptr) :
         mPath(std::move(path)),

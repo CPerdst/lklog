@@ -6,10 +6,11 @@
 #define LKLOG_CONTENTDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class contentDecorator :public decorator{
+    class DLL_API contentDecorator :public decorator{
     public:
         contentDecorator():decorator(){};
         ~contentDecorator() override = default;

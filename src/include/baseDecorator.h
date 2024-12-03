@@ -9,10 +9,11 @@
 #include "variant"
 #include "thread"
 #include "map"
+#include "tools.h"
 
 namespace logger {
 
-    class baseDecorator {
+    class DLL_API baseDecorator {
     public:
         baseDecorator() = default;
         virtual ~baseDecorator() = default;

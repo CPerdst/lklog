@@ -6,10 +6,11 @@
 #define LKLOG_FUNCDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class funcDecorator :public decorator{
+    class DLL_API funcDecorator :public decorator{
     public:
         funcDecorator():decorator(){};
         ~funcDecorator() override = default;

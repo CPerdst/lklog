@@ -15,10 +15,11 @@
 #include "consoleAppender.h"
 #include "formator.h"
 #include "packer.h"
+#include "tools.h"
 
 namespace logger {
 
-    class logger {
+    class DLL_API logger {
     public:
         static std::function<void(std::string&)> g_console_appender_callback;
 

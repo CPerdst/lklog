@@ -6,10 +6,11 @@
 #define LKLOG_TIDDECORATOR_H
 
 #include "decorator.h"
+#include "tools.h"
 
 namespace logger {
 
-    class tidDecorator :public decorator{
+    class DLL_API tidDecorator :public decorator{
     public:
         tidDecorator():decorator(){};
         ~tidDecorator() override = default;

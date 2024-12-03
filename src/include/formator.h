@@ -17,6 +17,7 @@
 #include "map"
 #include "variant"
 #include "thread"
+#include "tools.h"
 
 namespace logger {
 

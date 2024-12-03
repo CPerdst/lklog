@@ -5,9 +5,11 @@
 #ifndef LKLOG_PACKER_H
 #define LKLOG_PACKER_H
 
+#include "tools.h"
+
 static const char* LevelToName[] = {"Trace","Debug", "Info", "Notice", "Warn", "Error", "Fatal"};
 
-class packer {
+class DLL_API packer {
 public:
     const static int MaxFileAppenderCount       = 10;
     const static bool DebugFileAppender         = false;
