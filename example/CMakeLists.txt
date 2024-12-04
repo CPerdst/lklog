@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+
+add_subdirectory(log_to_console)
+add_subdirectory(log_to_file)
+add_subdirectory(custom_logger_format)
+add_subdirectory(console_callback)

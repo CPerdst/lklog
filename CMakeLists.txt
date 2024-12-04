@@ -12,7 +12,6 @@ file(GLOB LKLOG_SOURCE "src/source/*.cpp")
 
 add_library(lklog SHARED ${LKLOG_SOURCE})
 
-
 if (WIN32)
     target_compile_definitions(lklog PRIVATE EXPORTING_DLL)
 endif ()
@@ -20,15 +19,7 @@ endif ()
 target_include_directories(lklog PUBLIC "src/include")
 
 # ----------------------
-# 简单测试 Mingw MSCV GNU
+# 编译测试样例
 # ----------------------
 
-project(test_lklog)
-
-add_executable(test_lklog test/basic_usage/main.cpp)
-
-target_include_directories(test_lklog PRIVATE src/include)
-
-target_link_directories(test_lklog PRIVATE ${CMAKE_BINARY_DIR}/lib)
-
-target_link_libraries(test_lklog PRIVATE lklog)
+add_subdirectory(example)
