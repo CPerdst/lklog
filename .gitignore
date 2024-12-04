@@ -4,6 +4,5 @@ modules.xml
 vcs.xml
 logger.iml
 workspace.xml
-main.cpp
 build/
 .vs/
