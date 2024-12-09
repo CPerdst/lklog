@@ -6,3 +6,4 @@ logger.iml
 workspace.xml
 build/
 .vs/
+.idea

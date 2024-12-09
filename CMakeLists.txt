@@ -22,4 +22,6 @@ target_include_directories(lklog PUBLIC "src/include")
 # 编译测试样例
 # ----------------------
 
-add_subdirectory(example)
+if(EXAMPLE_BUILD)
+    add_subdirectory(example)
+endif()
