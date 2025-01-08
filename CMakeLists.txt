@@ -6,7 +6,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # 静态库输出路
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # 动态库输出路径
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # 二进制文件输出路径
 
-set (CRT_BUILD_TYPE "static")
+if (NOT CRT_BUILD_TYPE)
+    set (CRT_BUILD_TYPE "static")
+endif ()
 
 project(lklog)
 
