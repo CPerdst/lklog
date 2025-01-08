@@ -3,7 +3,7 @@
 //
 
 #include "iostream"
-#include "eventCapturer.h"
+#include "EventCapturer.h"
 
 void initLogger(){
     logger::logger::Root()->setLevel(packer::Trace);

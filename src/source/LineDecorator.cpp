@@ -2,11 +2,11 @@
 // Created by l1Akr on 24-8-10.
 //
 
-#include "lineDecorator.h"
+#include "decorator/LineDecorator.h"
 #include "regex"
 
 namespace logger {
-    void lineDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
+    void decorator::LineDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
         std::regex r("(%line|%linenum)");
         std::smatch match;
         if(std::regex_search(str, match, r)){

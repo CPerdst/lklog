@@ -5,15 +5,15 @@
 #ifndef LKLOG_FILEPATHDECORATOR_H
 #define LKLOG_FILEPATHDECORATOR_H
 
-#include "decorator.h"
+#include "Decorator.h"
 #include "tools.h"
 
-namespace logger {
+namespace logger::decorator {
 
-    class DLL_API filepathDecorator:public decorator {
+    class DLL_API FilepathDecorator: public Decorator {
     public:
-        filepathDecorator():decorator(){};
-        ~filepathDecorator() override = default;
+        FilepathDecorator(): Decorator(){};
+        ~FilepathDecorator() override = default;
 
         void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
     };

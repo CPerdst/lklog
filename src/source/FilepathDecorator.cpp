@@ -2,12 +2,12 @@
 // Created by l1Akr on 24-8-10.
 //
 
-#include "filepathDecorator.h"
+#include "decorator/FilepathDecorator.h"
 #include "regex"
 #include "iostream"
 
 namespace logger {
-    void filepathDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
+    void decorator::FilepathDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
         std::regex r("(%path|%filepath)");
         std::smatch match;
         if(std::regex_search(str, match, r)){

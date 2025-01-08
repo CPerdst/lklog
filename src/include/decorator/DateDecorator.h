@@ -5,15 +5,15 @@
 #ifndef LOGGER_DATEDECORATOR_H
 #define LOGGER_DATEDECORATOR_H
 
-#include "decorator.h"
+#include "Decorator.h"
 #include "tools.h"
 
-namespace logger {
+namespace logger::decorator {
 
-    class DLL_API dateDecorator :public decorator{
+    class DLL_API DateDecorator : public Decorator{
     public:
-        dateDecorator():decorator(){};
-        ~dateDecorator() override = default;
+        DateDecorator(): Decorator(){};
+        ~DateDecorator() override = default;
 
         void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
     };

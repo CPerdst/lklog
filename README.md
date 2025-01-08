@@ -24,7 +24,7 @@ lklog 共有七中日志等级（Trace、Debug、Info、Notice、Warn、Error、
 只需要使用对应的宏即可
 
 ```cpp
-#include "eventCapturer.h"
+#include "EventCapturer.h"
 
 int main(){
     // 七种模式的简单使用
@@ -45,7 +45,7 @@ int main(){
 ### 更改日志器的默认设置
 
 ```cpp
-#include "eventCapturer.h"
+#include "EventCapturer.h"
 
 int main(){
     // 设置日志等级

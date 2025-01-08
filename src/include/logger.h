@@ -11,8 +11,8 @@
 #include "mutex"
 #include "variant"
 #include "thread"
-#include "fileAppender.h"
-#include "consoleAppender.h"
+#include "FileAppender.h"
+#include "ConsoleAppender.h"
 #include "formator.h"
 #include "packer.h"
 #include "tools.h"
@@ -36,8 +36,8 @@ namespace logger {
         static logger* root;
         static std::mutex* mtx;
     private:
-        std::vector<std::shared_ptr<fileAppender>> mFileAppenders;
-        std::shared_ptr<consoleAppender> mConsoleAppender;
+        std::vector<std::shared_ptr<FileAppender>> mFileAppenders;
+        std::shared_ptr<ConsoleAppender> mConsoleAppender;
         std::shared_ptr<formator> mFormater;
         packer::level mLevel;
     };

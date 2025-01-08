@@ -5,15 +5,15 @@
 #ifndef LKLOG_TIDDECORATOR_H
 #define LKLOG_TIDDECORATOR_H
 
-#include "decorator.h"
+#include "Decorator.h"
 #include "tools.h"
 
-namespace logger {
+namespace logger::decorator {
 
-    class DLL_API tidDecorator :public decorator{
+    class DLL_API TidDecorator : public Decorator{
     public:
-        tidDecorator():decorator(){};
-        ~tidDecorator() override = default;
+        TidDecorator(): Decorator(){};
+        ~TidDecorator() override = default;
 
         void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
     };

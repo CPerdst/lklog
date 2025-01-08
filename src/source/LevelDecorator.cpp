@@ -2,12 +2,12 @@
 // Created by l1Akr on 24-8-10.
 //
 
-#include "levelDecorator.h"
+#include "decorator/LevelDecorator.h"
 #include "regex"
 #include "packer.h"
 
 namespace logger {
-    void levelDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
+    void decorator::LevelDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
         std::regex r("(%level)");
         std::smatch match;
         if(std::regex_search(str, match, r)){

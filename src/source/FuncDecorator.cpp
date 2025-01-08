@@ -2,11 +2,11 @@
 // Created by l1Akr on 24-8-21.
 //
 
-#include "funcDecorator.h"
+#include "decorator/FuncDecorator.h"
 #include "regex"
 
 namespace logger {
-    void funcDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
+    void decorator::FuncDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
         std::regex r("(%func)");
         std::smatch match;
         if(std::regex_search(str, match, r)){

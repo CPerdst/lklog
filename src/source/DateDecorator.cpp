@@ -2,12 +2,12 @@
 // Created by leakerma on 8/9/2024.
 //
 
-#include "dateDecorator.h"
+#include "decorator/DateDecorator.h"
 #include "regex"
 #include "iostream"
 
 namespace logger {
-    void dateDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
+    void decorator::DateDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) {
         std::regex r("%s[' ']*(\\{(.*?)\\})?");
         std::smatch match;
         if(std::regex_search(str, match, r)){

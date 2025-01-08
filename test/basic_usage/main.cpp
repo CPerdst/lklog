@@ -2,7 +2,7 @@
 // Created by l1Akr on 2024/12/3.
 //
 #include "iostream"
-#include "eventCapturer.h"
+#include "EventCapturer.h"
 
 int main() {
     /**

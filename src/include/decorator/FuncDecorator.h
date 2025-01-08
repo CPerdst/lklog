@@ -5,15 +5,15 @@
 #ifndef LKLOG_FUNCDECORATOR_H
 #define LKLOG_FUNCDECORATOR_H
 
-#include "decorator.h"
+#include "Decorator.h"
 #include "tools.h"
 
-namespace logger {
+namespace logger::decorator {
 
-    class DLL_API funcDecorator :public decorator{
+    class DLL_API FuncDecorator : public Decorator{
     public:
-        funcDecorator():decorator(){};
-        ~funcDecorator() override = default;
+        FuncDecorator(): Decorator(){};
+        ~FuncDecorator() override = default;
 
         void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
     };

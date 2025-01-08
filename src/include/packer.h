@@ -9,6 +9,16 @@
 
 static const char* LevelToName[] = {"Trace","Debug", "Info", "Notice", "Warn", "Error", "Fatal"};
 
+/**
+ * 日志：%message
+ * 函数名：%func
+ * 代码行：%line
+ * 日志等级：%level
+ * 代码路径：%filepath
+ * 时间： %s {%Y-%m-%d %H:%M:%S}
+ * 标签： %tag
+ */
+
 class DLL_API packer {
 public:
     const static int MaxFileAppenderCount       = 10;

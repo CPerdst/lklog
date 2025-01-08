@@ -20,12 +20,12 @@ namespace logger {
 
     void logger::logToConsole() {
         if(!mConsoleAppender.get())
-            mConsoleAppender = std::make_shared<consoleAppender>();
+            mConsoleAppender = std::make_shared<ConsoleAppender>();
     }
 
     void logger::logToFile(std::string path) {
         if(mFileAppenders.size() < packer::MaxFileAppenderCount){
-            auto tmp = std::make_shared<fileAppender>();
+            auto tmp = std::make_shared<FileAppender>();
             tmp->open(std::move(path));
             mFileAppenders.push_back(std::move(tmp));
         }

@@ -2,7 +2,7 @@
 // Created by zwj1 on 24-12-4.
 //
 
-#include "eventCapturer.h"
+#include "EventCapturer.h"
 
 inline void initLogger(std::string& path) {
     logger::logger::Root()->logToFile(path);

@@ -4,7 +4,7 @@
 
 #include "iostream"
 #include "functional"
-#include "eventCapturer.h"
+#include "EventCapturer.h"
 
 inline void initLogger() {
     auto callback = [](std::string& message){

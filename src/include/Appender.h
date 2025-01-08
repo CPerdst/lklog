@@ -11,10 +11,10 @@
 
 namespace logger {
 
-    class DLL_API appender {
+    class DLL_API Appender {
     public:
-        appender() = default;
-        virtual ~appender() = default;
+        Appender() = default;
+        virtual ~Appender() = default;
         virtual void logOut(std::string log) = 0;
         virtual void logOut(std::string log, std::function<void(std::string&)> console_appender_callback) = 0;
     };

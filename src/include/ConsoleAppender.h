@@ -5,14 +5,14 @@
 #ifndef LKLOG_CONSOLEAPPENDER_H
 #define LKLOG_CONSOLEAPPENDER_H
 
-#include "appender.h"
+#include "Appender.h"
 #include "tools.h"
 
 namespace logger {
 
-    class DLL_API consoleAppender : public appender{
+    class DLL_API ConsoleAppender : public Appender{
     public:
-        consoleAppender() = default;
+        ConsoleAppender() = default;
         void logOut(std::string log) override;
         void logOut(std::string log, std::function<void(std::string&)> console_appender_callback) override;
     };

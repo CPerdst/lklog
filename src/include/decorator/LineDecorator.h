@@ -5,15 +5,15 @@
 #ifndef LKLOG_LINEDECORATOR_H
 #define LKLOG_LINEDECORATOR_H
 
-#include "decorator.h"
+#include "Decorator.h"
 #include "tools.h"
 
-namespace logger {
+namespace logger::decorator {
 
-    class DLL_API lineDecorator :public decorator{
+    class DLL_API LineDecorator : public Decorator{
     public:
-        lineDecorator():decorator(){};
-        ~lineDecorator() override = default;
+        LineDecorator(): Decorator(){};
+        ~LineDecorator() override = default;
 
         void format(std::map<std::string, std::variant<int, std::string, std::thread::id>>& events) override;
     };

@@ -5,20 +5,20 @@
 #ifndef LKLOG_FILEAPPENDER_H
 #define LKLOG_FILEAPPENDER_H
 
-#include "appender.h"
+#include "Appender.h"
 #include "fstream"
 #include "tools.h"
 
 namespace logger {
 
-    class DLL_API fileAppender : public appender{
+    class DLL_API FileAppender : public Appender{
     public:
-        fileAppender() = default;
-        ~fileAppender() override = default;
-        fileAppender(const fileAppender&) = delete;
-        fileAppender& operator=(const fileAppender&) =delete;
-        fileAppender(fileAppender&&) noexcept = default;
-        fileAppender& operator=(fileAppender&&) noexcept = default;
+        FileAppender() = default;
+        ~FileAppender() override = default;
+        FileAppender(const FileAppender&) = delete;
+        FileAppender& operator=(const FileAppender&) =delete;
+        FileAppender(FileAppender&&) noexcept = default;
+        FileAppender& operator=(FileAppender&&) noexcept = default;
         void logOut(std::string log) override;
         void logOut(std::string log, std::function<void(std::string&)> console_appender_callback) override;
         void open(std::string path);

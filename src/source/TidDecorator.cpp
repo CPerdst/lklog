@@ -2,14 +2,14 @@
 // Created by l1Akr on 24-8-10.
 //
 
-#include "tidDecorator.h"
+#include "decorator/TidDecorator.h"
 #include "regex"
 #include "iostream"
 #include "iomanip"
 #include "sstream"
 
 namespace logger {
-    void tidDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
+    void decorator::TidDecorator::format(std::map<std::string, std::variant<int, std::string, std::thread::id>> &events) {
         std::regex r("(%tid|%threadid)(\\{(\\d+)\\})?");
         std::smatch match;
         if(std::regex_search(str, match, r)){

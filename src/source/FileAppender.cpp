@@ -2,10 +2,10 @@
 // Created by l1Akr on 24-8-10.
 //
 
-#include "fileAppender.h"
+#include "FileAppender.h"
 
 namespace logger {
-    void fileAppender::open(std::string path) {
+    void FileAppender::open(std::string path) {
         this->path = std::move(path);
         if(ofs.is_open())
             ofs.close();
@@ -13,12 +13,12 @@ namespace logger {
         ofs.open(this->path, std::ios::app);
     }
 
-    void fileAppender::logOut(std::string log) {
+    void FileAppender::logOut(std::string log) {
         if(ofs.is_open())
             ofs << log << std::flush;
     }
 
-    void fileAppender::logOut(std::string log, std::function<void (std::string &)> console_appender_callback)
+    void FileAppender::logOut(std::string log, std::function<void (std::string &)> console_appender_callback)
     {
         if(ofs.is_open())
             ofs << log << std::flush;
