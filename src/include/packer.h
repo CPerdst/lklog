@@ -7,7 +7,7 @@
 
 #include "tools.h"
 
-static const char* LevelToName[] = {"Trace","Debug", "Info", "Notice", "Warn", "Error", "Fatal"};
+[[maybe_unused]] static const char* LevelToName[] = {"Trace","Debug", "Info", "Notice", "Warn", "Error", "Fatal"};
 
 /**
  * 日志：%message
